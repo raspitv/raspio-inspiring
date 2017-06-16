@@ -1,5 +1,5 @@
-from time import sleep
-import apa
+from time import sleep     # RasPiO Inspiring scripts
+import apa                 # http://rasp.io/inspiring
 numleds = 24               # number of LEDs in our display
 delay = 0.04               # seconds between frames
 brightness = 6             # 0=OFF (224 or 0xE0), 31=FULL (255 or 0xFF)

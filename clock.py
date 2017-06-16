@@ -1,12 +1,12 @@
-import time                 # This clock works with RasPiO InsPiRing Circle
-from time import sleep
+import time                    # This clock works with RasPiO InsPiRing Circle
+from time import sleep         # http://rasp.io/inspiring
 from datetime import datetime
-import apa                  # RasPiO InsPiRing driver class
-numleds = 24                # number of LEDs in our display
-brightness = 6              # 0-31, 224-255 or 0xE0-0xFF
-ledstrip = apa.Apa(numleds) # initiate an LED strip
+import apa                     # RasPiO InsPiRing driver class
+numleds = 24                   # number of LEDs in our display
+brightness = 6                 # 0-31, 224-255 or 0xE0-0xFF
+ledstrip = apa.Apa(numleds)    # initiate an LED strip
 
-def wipe(brightness, b, g, r):  # function for hourly etc. wipe animations
+def wipe(brightness, b, g, r): # function for hourly etc. wipe animations
     for i in range(numleds):
         ledstrip.led_set(i, brightness, b, g, r)
         ledstrip.write_leds()

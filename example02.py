@@ -1,5 +1,5 @@
-from time import sleep
-import apa
+from time import sleep      # RasPiO Inspiring scripts
+import apa                  # http://rasp.io/inspiring
 numleds = 24                # number of LEDs in our display
 brightness = 11             # 0 = OFF, 31 = FULL
 ledstrip = apa.Apa(numleds)

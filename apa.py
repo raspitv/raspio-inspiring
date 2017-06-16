@@ -1,5 +1,5 @@
-import spidev
-from time import sleep
+import spidev                  # RasPiO Inspiring scripts
+from time import sleep         # http://rasp.io/inspiring
 spi = spidev.SpiDev()
 spi.open(0,1)   # using device 1 so 0 is free for AZ
 

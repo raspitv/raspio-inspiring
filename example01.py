@@ -1,3 +1,6 @@
+# RasPiO Inspiring scripts
+# http://rasp.io/inspiring
+
 # Import our Python class called apa. 
 # Your Python script needs to be in the same directory as apa.py
 # (default is /home/pi/raspio-inspiring)

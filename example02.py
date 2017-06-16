@@ -1,7 +1,7 @@
 from time import sleep
 import apa
 numleds = 24                # number of LEDs in our display
-brightness = 235            # 224 = OFF, 255 = FULL
+brightness = 11             # 0 = OFF, 31 = FULL
 ledstrip = apa.Apa(numleds)
 
 try:

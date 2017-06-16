@@ -2,7 +2,7 @@ from time import sleep
 import apa
 numleds = 24               # number of LEDs in our display
 delay = 0.04               # seconds between frames
-brightness = 0xE5          # 0xE0=OFF (224), 0xFF=FULL (255)
+brightness = 6             # 0=OFF (224 or 0xE0), 31=FULL (255 or 0xFF)
 ledstrip = apa.Apa(numleds)
 
 def updown(b,g,r):

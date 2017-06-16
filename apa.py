@@ -3,10 +3,6 @@ from time import sleep
 spi = spidev.SpiDev()
 spi.open(0,1)   # using device 1 so 0 is free for AZ
 
-
-# I reckon we can specify the port too if we want
-# brightness is a 5-bit setting sort this out better if can
-
 class Apa(object):
     def __init__(self, numleds):
         self.numleds = numleds
@@ -50,7 +46,8 @@ class Apa(object):
         number is the list index of the LED
         e.g. first LED is 0 and eighth is 7.
         
-        Brightness values are 224-255 or 0xE0-0xFF
+        Brightness values are 0-31 for simplicity
+        But you can also use  224-255 or 0xE0-0xFF
         
         Colour values are 0-255 in decimal or hex 0x00-0xFF.
         Values such as 255, 0, 0, 0 sometimes cause errors.
@@ -58,6 +55,9 @@ class Apa(object):
         If you want "black" or "off", better to use brightness of 224 or 0xE0
         then the LED will be off regardless of what colour values you give it
         """
+        if (brightness < 32):   # so you can use 0-31 for brightness too
+            brightness += 224
+                
         self.led_values[number] = [brightness, blue, green, red]
 
 
@@ -110,19 +110,19 @@ brightness, Blue, Green, Red
 ledstrip.led_set(number, brightness, blue, green, red)
 where number is the LED position number starting at 0
 
-RGB values are 0-255 decimal (or hex 0x00-0xFF)
-Brightness values are 224-255 or 0xE0-0xFF
-        
-Colour values are 0-255 in decimal or hex 0x00-0xFF.
+Brightness values are 0-31 for simplicity
+But you can also use  224-255 or 0xE0-0xFF
+
+RGB colour values are 0-255 decimal (or hex 0x00-0xFF)
 Values such as 255, 0, 0, 0 sometimes cause errors.
         
-If you want "black" or "off", better to use brightness of 224 or 0xE0
+If you want "black" or "off", better to use brightness of 0, 224 or 0xE0
 then the LED will be off regardless of what colour values you give it
 All LED values are stored in list variable
 led_values
 
-ledstrip.write_leds() initiates the APA102c LEDs, then writes to spi 
-the contents of led_values, namely 4 data bytes for each LED:
+ledstrip.write_leds() initiates the SK9822 (or APA102c) LEDs, then writes
+to spi the contents of led_values, namely 4 data bytes for each LED:
 brightness, blue, green, red  
 
 This sets the brightness and colours of each LED.
@@ -147,6 +147,4 @@ You can squash in some more by upping the MHz, but only about
 3 times as many at 60 MHz. It looks like the chip enable process
 slows things down. Perhaps xfer2 would be faster if no 
 other SPI devices are in use?
-
-
 """

@@ -11,8 +11,8 @@ ledstrip = apa.Apa(numleds)
 
 ledstrip.flush_leds()
 
-# set brightness value. 224 = OFF, 255 = FULL
-brightness = 255 
+# set brightness value. 0 = OFF, 31 = FULL
+brightness = 31 
 
 # set LED 0 to full red
 ledstrip.led_set(0, brightness, 0, 0, 255)

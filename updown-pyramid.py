@@ -3,7 +3,7 @@ import apa                # http://rasp.io/inspiring
 
 numleds = 72              # number of LEDs in our display
 delay = 0.04
-brightness = 5
+brightness = 5            # 0-31, 224-255, 0xE0-0xFF
 
 ledstrip = apa.Apa(numleds)
 
@@ -26,6 +26,9 @@ sleep(1)
 ledstrip.flush_leds()
 ledstrip.zero_leds()
 ledstrip.write_leds()
+
+if (brightness < 32):   # so you can use 0-31 for brightness too
+    brightness += 224
 
 levels = [[16,17,18,19,20,21,22,23,40,41,42,43,44,45,46,47,64,65,66,67,68,69,70,71],
           [0,15,24,39,48,63],

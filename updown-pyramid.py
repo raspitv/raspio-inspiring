@@ -76,7 +76,7 @@ This program cycles up and down the pyramid, changing colours for each iteration
 
 Things of note are...
 
-levels (line 30) is a list of lists. 
+levels (line 33) is a list of lists. 
 Each element of the main list contains a list of LED numbers on the same level.
 e.g. levels[0] contains 24 elements because there are 3 strips of 8 LEDs on that level.
 All the other levels have 6 elements.

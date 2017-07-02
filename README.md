@@ -3,8 +3,6 @@
 [This software is licensed under CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 which means you may use it for pretty much whatever you like **except for commercial purposes.**
 
-There will be some documentation here, but for now, if you type ```pydoc apa```
-from ```/home/pi/raspio-inspiring``` you'll get an overview of how to use it.
 
 **[The main RasPiO InsPiRing page is here](http://rasp.io/inspiring)** you can find all product and purchase information there.
 
@@ -22,6 +20,9 @@ You will need to enable SPI on the Pi, then grab the software from GitHub
 then
 
 ```git clone https://github.com/raspitv/raspio-inspiring.git```
+
+Once installed, either [consult the user guide](http://rasp.io/wp-content/uploads/2017/06/raspio-inspiring-guide.pdf#page=17) or type ```pydoc apa```
+from ```/home/pi/raspio-inspiring``` for an overview of how to use it.
 
 
 ### Driver Assembly Video

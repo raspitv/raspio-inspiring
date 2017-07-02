@@ -12,7 +12,7 @@ An **[extensive user guide can be found here](http://rasp.io/wp-content/uploads/
 
 [![RasPiO InsPiRing User Guide](http://rasp.io/wp-content/uploads/2017/06/RasPiO-InsPiRing-User-Guide.png)](http://rasp.io/wp-content/uploads/2017/06/raspio-inspiring-guide.pdf)
 
-###Installation Instructions
+##Installation Instructions
 Full instructions on [page 15 of the user guide](http://rasp.io/wp-content/uploads/2017/06/raspio-inspiring-guide.pdf#page=15)
 
 You will need to enable SPI on the Pi, then grab the software from GitHub

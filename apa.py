@@ -2,6 +2,7 @@ import spidev                  # RasPiO Inspiring scripts
 from time import sleep         # http://rasp.io/inspiring
 spi = spidev.SpiDev()
 spi.open(0,1)   # using device 1 so 0 is free for AZ
+spi.max_speed_hz = 30000000    # fixing SPI (thanks Dougie)
 
 class Apa(object):
     def __init__(self, numleds):

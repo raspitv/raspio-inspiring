@@ -1,5 +1,6 @@
 import spidev                  # RasPiO Inspiring scripts
 from time import sleep         # http://rasp.io/inspiring
+import copy
 spi = spidev.SpiDev()
 spi.open(0,1)   # using device 1 so 0 is free for AZ
 spi.max_speed_hz = 30000000    # fixing SPI (thanks Dougie)
@@ -20,7 +21,8 @@ class Apa(object):
         """write_leds() writes all stored led_values to LEDs"""
         self.flush_leds()
         for value in self.led_values:
-            self.send = spi.xfer(value)
+            txdata = copy.copy(value)
+            self.send = spi.xfer(txdata)
         for x in range((self.numleds // 32) +2):  #check this not overkill
             self.flush_leds()
 
